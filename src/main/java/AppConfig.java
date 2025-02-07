@@ -24,10 +24,13 @@ public class AppConfig {
      */
 
 
+    /*
     //dont comment out this code
     @Bean(name="speakerRepository")
     public SpeakerRepository getSpeakerRepository(){
         return new StubSpeakerRepositoryImpl();
     }
+
+     */
 
 }
