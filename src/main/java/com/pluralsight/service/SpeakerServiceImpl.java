@@ -4,12 +4,21 @@ import com.pluralsight.model.Speaker;
 import com.pluralsight.repository.SpeakerRepository;
 import com.pluralsight.repository.StubSpeakerRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+////@Bean
+//@Component
+@Service("speakerService")
+@Scope(value= BeanDefinition.SCOPE_PROTOTYPE)
 public class SpeakerServiceImpl implements SpeakerService {
 
 //    private SpeakerRepository repository = new StubSpeakerRepositoryImpl();
+
 
     public SpeakerServiceImpl(){
         System.out.println("SpeakerServiceImpl with noargs constructor");
@@ -29,6 +38,7 @@ public class SpeakerServiceImpl implements SpeakerService {
 
     @Autowired
     public void setRepository(SpeakerRepository repository) {
+        System.out.println(repository);
         System.out.println("SpeakerServiceImpl setter Injector");
         this.repository = repository;
     }
