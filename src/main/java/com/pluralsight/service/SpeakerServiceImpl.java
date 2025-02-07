@@ -10,6 +10,11 @@ public class SpeakerServiceImpl implements SpeakerService {
 
 //    private SpeakerRepository repository = new StubSpeakerRepositoryImpl();
 
+
+    public SpeakerServiceImpl(SpeakerRepository repository) {
+        this.repository = repository;
+    }
+
     private SpeakerRepository repository;
 
     @Override
